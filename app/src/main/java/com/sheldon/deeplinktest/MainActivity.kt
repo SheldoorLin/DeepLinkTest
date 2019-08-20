@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnLoadData.setOnClickListener {
             val uri = Uri.parse("content://contact")
             val cursorReceiver = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                contentResolver.query(uri,null,null, null)
+                contentResolver.query(uri, null, null, null)
             } else {
                 TODO("VERSION.SDK_INT < O")
             }
@@ -49,17 +49,17 @@ class MainActivity : AppCompatActivity() {
 
             cursorReceiver?.moveToFirst()
             cursorReceiver?.getString(1)
-            Log.d(TAG,"cursor_receiver_title_first ${cursorReceiver?.getString(2).toString()}")
+            Log.d(TAG, "cursor_receiver_title_first ${cursorReceiver?.getString(2).toString()}")
 
             cursorReceiver?.move(1)
             cursorReceiver?.getString(1)
-            Log.d(TAG,"cursor_receiver_title_second ${cursorReceiver?.getString(2).toString()}")
+            Log.d(TAG, "cursor_receiver_title_second ${cursorReceiver?.getString(2).toString()}")
 
             cursorReceiver?.moveToLast()
             cursorReceiver?.getString(1)
-            Log.d(TAG,"cursor_receiver_title_third ${cursorReceiver?.getString(2).toString()}")
+            Log.d(TAG, "cursor_receiver_title_third ${cursorReceiver?.getString(2).toString()}")
 
         }
-        }
+    }
 
 }
