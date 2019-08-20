@@ -60,7 +60,22 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "cursor_receiver_title_third ${cursorReceiver?.getString(2).toString()}")
 
         }
-        
+
+
+        binding.btnSendBroadcast.setOnClickListener {
+            val bdMessage = Intent("tw.android.ACTION_01")
+            bdMessage.putExtra("action","countdownAction")
+            sendBroadcast(bdMessage)
+            Log.d("broadcast","發送!!")
+        }
+
+        binding.btnBroadcastStop.setOnClickListener {
+            val bdMessage = Intent("tw.android.ACTION_01")
+            bdMessage.putExtra("action","countdownStop")
+            sendBroadcast(bdMessage)
+            Log.d("broadcast","發送!!")
+        }
+
 
     }
 

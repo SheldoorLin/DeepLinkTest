@@ -3,4 +3,6 @@
     <string name="text_1">前開衩扭結洋裝</string>
     <string name="text_2">透肌澎澎防曬襯衫</string>
     <string name="btn_load">按我接收資料(最多三筆)</string>
+    <string name="btn_send">按我發送倒數廣播</string>
+    <string name="btn_stop">點我廣播結束server</string>
 </resources>
