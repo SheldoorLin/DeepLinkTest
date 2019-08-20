@@ -60,6 +60,8 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "cursor_receiver_title_third ${cursorReceiver?.getString(2).toString()}")
 
         }
+        
+
     }
 
 }
