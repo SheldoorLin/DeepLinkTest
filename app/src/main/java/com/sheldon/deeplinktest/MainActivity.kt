@@ -1,5 +1,6 @@
 package com.sheldon.deeplinktest
 
+import android.content.ComponentName
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -59,18 +60,22 @@ class MainActivity : AppCompatActivity() {
             cursorReceiver?.getString(1)
             Log.d(TAG, "cursor_receiver_title_third ${cursorReceiver?.getString(2).toString()}")
 
+
+
         }
 
 
         binding.btnSendBroadcast.setOnClickListener {
-            val bdMessage = Intent("tw.android.ACTION_01")
+            val bdMessage = Intent("android.sheldon.ACTION_RECEIVER")
+            bdMessage.component = ComponentName("com.sheldon.stylish", "com.sheldon.stylish.StylishBroadCastReceiver")
             bdMessage.putExtra("action","countdownAction")
             sendBroadcast(bdMessage)
             Log.d("broadcast","發送!!")
         }
 
         binding.btnBroadcastStop.setOnClickListener {
-            val bdMessage = Intent("tw.android.ACTION_01")
+            val bdMessage = Intent("android.sheldon.ACTION_RECEIVER")
+            bdMessage.component = ComponentName("com.sheldon.stylish", "com.sheldon.stylish.StylishBroadCastReceiver")
             bdMessage.putExtra("action","countdownStop")
             sendBroadcast(bdMessage)
             Log.d("broadcast","發送!!")
